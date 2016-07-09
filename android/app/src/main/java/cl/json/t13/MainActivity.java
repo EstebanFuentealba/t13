@@ -1,4 +1,4 @@
-package com.t13;
+package cl.json.t13;
 
 import com.facebook.react.ReactActivity;
 
