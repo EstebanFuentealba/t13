@@ -2,4 +2,12 @@
 <resources>
   <color name="menuColor">#ff2c2c2c</color>
   <color name="white">#ffffffff</color>
+  <color name="background">#ffe4e6e6</color>
+  <color name="background_floating_material_dark">#ff424242</color>
+  <color name="background_floating_material_light">#ffeeeeee</color>
+  <color name="background_material_dark">#ff303030</color>
+  <color name="background_material_light">#ffeeeeee</color>
+  <color name="tutorial_background">#ff282828</color>
+  <color name="tutorial_divider">#ff494949</color>
+  <color name="tutorial_front">#ff2c2c2c</color>
 </resources>
