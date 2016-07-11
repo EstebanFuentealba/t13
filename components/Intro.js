@@ -67,9 +67,11 @@ const styles = StyleSheet.create({
 export default class Intro extends Component {
   onSkipBtnHandle = (index) => {
     console.log(index);
+    this.props.app.successTutorial();
   }
   doneBtnHandle = () => {
     console.log('Done');
+    this.props.app.successTutorial();
   }
   render() {
     return (
@@ -82,12 +84,12 @@ export default class Intro extends Component {
         <View style={[styles.column , styles.slide]}>
           <View level={15} style={[styles.row, styles.topContainer]}>
               <Image style={styles.tutorialImage}
-                source={require('./../android/app/src/main/res/drawable/tutorial_01.png')} />
+                source={require('image!tutorial_01')} />
           </View>
           <View style={[styles.column, styles.bottomContainer]}>
             <View style={styles.iconContainer}>
               <Image style={styles.icon}
-                source={require('./../android/app/src/main/res/drawable/ic_programa_icon.png')} />
+                source={require('image!ic_programa_icon')} />
             </View>
             <View level={8} style={styles.textContainer}>
               <Text style={styles.text}>Accede a todos los noticiarios de Teletrece</Text>
@@ -97,12 +99,12 @@ export default class Intro extends Component {
         <View style={[styles.column , styles.slide]}>
           <View level={15} style={[styles.row, styles.topContainer]}>
               <Image style={styles.tutorialImage}
-                source={require('./../android/app/src/main/res/drawable/tutorial_02.png')} />
+                source={require('image!tutorial_02')} />
           </View>
           <View style={[styles.column, styles.bottomContainer]}>
             <View style={styles.iconContainer}>
               <Image style={styles.icon}
-                source={require('./../android/app/src/main/res/drawable/ic_radio_icon.png')} />
+                source={require('image!ic_radio_icon')} />
             </View>
             <View level={8} style={styles.textContainer}>
               <Text style={styles.text}>Dale play en culquier lugar a Tele13 Radio y a nuestra Señal en vivo de Canal13</Text>
@@ -112,12 +114,12 @@ export default class Intro extends Component {
         <View style={[styles.column , styles.slide]}>
           <View level={15} style={[styles.row, styles.topContainer]}>
               <Image style={styles.tutorialImage}
-                source={require('./../android/app/src/main/res/drawable/tutorial_03.png')} />
+                source={require('image!tutorial_03')} />
           </View>
           <View style={[styles.column, styles.bottomContainer]}>
             <View style={styles.iconContainer}>
               <Image style={styles.icon}
-                source={require('./../android/app/src/main/res/drawable/ic_swipe_icon.png')} />
+                source={require('image!ic_swipe_icon')} />
             </View>
             <View level={8} style={styles.textContainer}>
               <Text style={styles.text}>Desliza para navegar entre las noticias</Text>
@@ -127,12 +129,12 @@ export default class Intro extends Component {
         <View style={[styles.column , styles.slide]}>
           <View level={15} style={[styles.row, styles.topContainer]}>
               <Image style={styles.tutorialImage}
-                source={require('./../android/app/src/main/res/drawable/tutorial_04.png')} />
+                source={require('image!tutorial_04')} />
           </View>
           <View style={[styles.column, styles.bottomContainer]}>
             <View style={styles.iconContainer}>
               <Image style={styles.icon}
-                source={require('./../android/app/src/main/res/drawable/ic_share_icon.png')} />
+                source={require('image!ic_share_icon')} />
             </View>
             <View level={8} style={styles.textContainer}>
               <Text style={styles.text}>Comparte los artículos de interés con tus amigos</Text>
@@ -142,12 +144,12 @@ export default class Intro extends Component {
         <View style={[styles.column , styles.slide]}>
           <View level={15} style={[styles.row, styles.topContainer]}>
               <Image style={styles.tutorialImage}
-                source={require('./../android/app/src/main/res/drawable/tutorial_05.png')} />
+                source={require('image!tutorial_05')} />
           </View>
           <View style={[styles.column, styles.bottomContainer]}>
             <View style={styles.iconContainer}>
               <Image style={styles.icon}
-                source={require('./../android/app/src/main/res/drawable/ic_personalizar_icon.png')} />
+                source={require('image!ic_personalizar_icon')} />
             </View>
             <View level={8} style={styles.textContainer}>
               <Text style={styles.text}>Personaliza tu inicio con los contenidos de interés</Text>

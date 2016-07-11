@@ -6,38 +6,21 @@
 
 import React, { Component } from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
+ AppRegistry,
+ StyleSheet,
+ Text,
+ View
 } from 'react-native';
-import Intro from './components/Intro';
+import App from './components/App';
 
-class t13 extends Component {
+class T13 extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
-      <Intro />
+      <App />
     );
   }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
-
-AppRegistry.registerComponent('t13', () => t13);
+};
+AppRegistry.registerComponent('t13', () => T13);
