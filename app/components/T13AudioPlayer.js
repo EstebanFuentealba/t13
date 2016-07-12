@@ -4,46 +4,45 @@ import {
   View
 } from 'react-native';
 import Video from 'react-native-video';
-
+import { toggleIsPlaying } from '../actions/playerActions';
 
 export default class T13AudioPlayer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      "status": "not_loading"
-    }
+      paused: false
+    };
+  }
+  componentWillUnmount(){
+    this.setState({
+      paused: true
+    });
+    console.log("UNLOAD RADIO")
   }
   render(){
     return (
       <Video
+          ref="audioPlayer"
           source={{uri: this.props.streamingURL }}
           playInBackground={true}
           onLoadStart={() => {
-            this.setState({
-              "status": "buffering"
-            });
-            this.props.onChangeStatus("buffering")
+            const { dispatch } = this.props;
+            dispatch(toggleIsPlaying(false));
           }}
           onLoad={() => {
-            this.setState({
-              "status": "playing"
-            });
-            this.props.onChangeStatus("playing")
+            const { dispatch } = this.props;
+            dispatch(toggleIsPlaying(true));
           }}
           muted={false}
-          paused={false}
+          paused={this.state.paused}
           volume={1}
           onEnd={() => {
-            this.setState({
-              "status": "end"
-            });
-            this.props.onChangeStatus("end")
+            const { dispatch } = this.props;
+            dispatch(toggleIsPlaying(false));
           }}
           onError={() => {
-            this.setState({
-              "status": "error"
-            });
-            this.props.onChangeStatus("error")
+            const { dispatch } = this.props;
+            dispatch(toggleIsPlaying(false));
           }}
           controls={false}
         />
