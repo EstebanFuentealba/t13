@@ -3,6 +3,7 @@ import {
   StyleSheet,
   Text,
   View,
+  Image,
   Navigator
 } from 'react-native';
 import { connect } from 'react-redux';

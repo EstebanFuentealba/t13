@@ -11,7 +11,6 @@ const store = configureStore();
 
 import App from './App';
 import Intro from './Intro';
-import T13VideoPlayer from './T13VideoPlayer';
 
 var styles = StyleSheet.create({
   container: {
