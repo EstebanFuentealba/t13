@@ -1,17 +1,13 @@
 import React from 'react';
+import Player from './Player';
 import {
   StyleSheet,
-  Text,
   View
 } from 'react-native';
-import Video from 'react-native-video';
 //import Orientation from 'react-native-orientation';
 
 
 export default class T13VideoPlayer extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   componentDidMount() {
     //Orientation.lockToLandscape();
   }
@@ -21,14 +17,11 @@ export default class T13VideoPlayer extends React.Component {
   render(){
     return (
       <View style={styles.container}>
-        <Video
-          source={{uri: this.props.streamingURL }}
+        <Player
+          streamingURL={this.props.streamingURL}
           style={styles.fullScreen}
-          paused={false}
-          volume={1}
-          onEnd={() => { console.log('Done!') }}
-          controls={false}
-        />
+          {...this.props}
+          />
       </View>
     );
   }

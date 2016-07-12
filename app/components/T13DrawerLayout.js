@@ -7,8 +7,8 @@ import {
   DrawerLayoutAndroid,
   ToolbarAndroid
 } from 'react-native';
-import T13VideoPlayer from './T13VideoPlayer';
-import T13AudioPlayer from './T13AudioPlayer';
+import T13VideoPlayer from './player/T13VideoPlayer';
+import T13AudioPlayer from './player/T13AudioPlayer';
 
 let DRAWER_WIDTH_LEFT = 56;
 
