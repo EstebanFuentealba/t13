@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import T13Navigator from './T13Navigator';
+import Intro from './Intro';
 
 var styles = StyleSheet.create({
   container: {
@@ -17,11 +18,14 @@ var styles = StyleSheet.create({
 class App extends React.Component {
   constructor(props) {
     super(props);
-  }
-  componentDidMount() {
-
+    this.state = {
+      skipIntro: false
+    };
   }
   render(){
+    if(!this.state.skipIntro) {
+      return <Intro parent={this} />;
+    }
     return (
       <View style={styles.container}>
         <T13Navigator {...this.props} />

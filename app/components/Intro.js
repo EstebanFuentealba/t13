@@ -67,11 +67,15 @@ const styles = StyleSheet.create({
 export default class Intro extends Component {
   onSkipBtnHandle = (index) => {
     console.log(index);
-    //this.props.app.successTutorial();
+    this.props.parent.setState({
+      skipIntro: true
+    });
   }
   doneBtnHandle = () => {
     console.log('Done');
-    //this.props.app.successTutorial();
+    this.props.parent.setState({
+      skipIntro: true
+    });
   }
   render() {
     return (
