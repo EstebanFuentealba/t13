@@ -11,7 +11,7 @@ import {
  Text,
  View
 } from 'react-native';
-import App from './components/App';
+import Main from './app/components/Main';
 
 class T13 extends React.Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class T13 extends React.Component {
   }
   render() {
     return (
-      <App />
+      <Main />
     );
   }
 };

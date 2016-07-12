@@ -27,24 +27,25 @@ export default class T13DrawerLayout extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      status: "news",
-      streamingURL: false
+      streamingURL: false,
+      playVideoStreaming: false,
+      playRadioStreaming: false
     };
   }
   onChangeStatusPlayer(status) {
     console.log(status);
   }
   _renderNavigationView() {
-    if(this.state.status == 'video_streaming') {
-      console.log(this.state.streamingURL);
+    if(this.state.playVideoStreaming) {
       return <T13VideoPlayer
                 streamingURL={this.state.streamingURL}
+                {...this.props}
                 />
-    } else if(this.state.status == 'audio_streaming') {
-      console.log(this.state.streamingURL);
+    } else if(this.state.playRadioStreaming) {
       return <T13AudioPlayer
                 streamingURL={this.state.streamingURL}
                 onChangeStatus={this.onChangeStatusPlayer.bind(this)}
+                {...this.props}
                 />
     } else {
       return (
@@ -53,8 +54,12 @@ export default class T13DrawerLayout extends React.Component {
     }
   }
   render(){
+    let iconRadio = require('image!ic_action_radio_normal');
+    if(this.state.playRadioStreaming) {
+      iconRadio = require('image!ic_action_radio_play');
+    }
     let toolbarActions = [
-      {title: 'T13 Radio', icon: require('image!ic_action_radio_normal'), show: 'always'},
+      {title: 'T13 Radio', icon: iconRadio, show: 'always'},
       {title: 'Señal en Vivo', icon: require('image!ic_action_senal_normal'), show: 'always'},
       {title: '', icon: require('image!ic_action_t13_press'), show: 'always'}
     ];
@@ -76,7 +81,7 @@ export default class T13DrawerLayout extends React.Component {
                   if(this.props.radios.length > 0) {
                     let streamingURL = this.props.radios[0].url;
                     this.setState({
-                      status: "audio_streaming",
+                      playRadioStreaming: !this.state.playRadioStreaming,
                       streamingURL: streamingURL
                     });
                   }
@@ -86,7 +91,7 @@ export default class T13DrawerLayout extends React.Component {
                   if(this.props.tvs.length > 0) {
                     let streamingURL = this.props.tvs[0].url;
                     this.setState({
-                      status: "video_streaming",
+                      playVideoStreaming: !this.state.playVideoStreaming,
                       streamingURL: streamingURL
                     });
                   }

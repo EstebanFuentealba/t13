@@ -45,6 +45,7 @@ export default class T13Navigator extends React.Component {
     return <T13DrawerLayout
               radios={this.state.radios}
               tvs={this.state.tvs}
+              {...this.props}
               />
   }
   render(){
